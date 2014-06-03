@@ -1,0 +1,6 @@
+Основа: XAMPP
+Состоит из: 
+	LAMP (Linux + Apache2 + MySQL + PHP)
+	phpMyAdmin
+Также используются:
+	javaScript + jQuery + DataTables

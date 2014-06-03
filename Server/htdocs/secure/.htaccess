@@ -1,0 +1,11 @@
+AuthType Basic
+AuthName "CAMP: authorization"
+AuthBasicProvider file
+AuthUserFile /opt/lampp/passwords/passwd.dat
+AuthGroupFile /opt/lampp/passwords/groups.dat 
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/secure/$1 [R,L]
+
+Require valid-user

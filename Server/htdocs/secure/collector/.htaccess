@@ -1,0 +1,13 @@
+#AuthType Basic
+#AuthName "Secure"
+#AuthBasicProvider file
+#AuthUserFile /opt/lampp/passwords/passwd.dat
+#AuthGroupFile /opt/lampp/passwords/groups.dat 
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/secure/collector/$1 [R,L]
+
+Require group collector
+Require group admin
+#Satisfy any 
